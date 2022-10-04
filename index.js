@@ -66,6 +66,7 @@ articles.forEach((item, i) => {
 // in place when then click is triggered, it puts the element in
 // font and the submain backgroundColor is set to the element background value
 function putInPlace(item, bgvalue) {
+  submain.innerHTML = `<h1>${item.innerText}</h1>`
   item.classList.toggle("isSrinked")
   submain.classList.toggle("isHidden")
   submain.style.backgroundColor = `${bgvalue}`;
@@ -73,6 +74,7 @@ function putInPlace(item, bgvalue) {
     submain.classList.remove("isHidden")
     item.classList.remove("isSrinked")
   })
+
 }
 
 
