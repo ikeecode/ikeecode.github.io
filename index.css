@@ -1,12 +1,15 @@
+/* mobile view */
 @media only screen and (max-width: 493px) {
   body {
     border: 2px solid black;
     height: 850px;
     position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   section {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100px;
     height: 100px;
     position: absolute;
@@ -15,27 +18,47 @@
 
   section#green {
     background-color: green;
-    right: 5%;
+    margin-left: 10px;
   }
 
   section#red {
     background-color: red;
-    top: 5%;
+    margin-right: 10px;
   }
 
   section#blue {
     background-color: blue;
-    bottom: 50%;
+    margin-top: 10px;
   }
 
   section#orange {
     background-color: orange;
-    right: 20%;
-    top: 20%;
+    margin-bottom: 10px;
+
+  }
+
+  section#body {
+    background-color: white;
+  }
+
+  button#display {
+    width: 100px;
+    height: 30px;
+    background-color: teal;
+    border-radius: 16px;
+    font-size: 32px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    font-size: 16px;
   }
 
 
 }
+
+
+/* Desktop View  */
 
 body {
   border: 2px solid black;
@@ -45,18 +68,18 @@ body {
   justify-content: space-around;
   align-items: center;
 
-}
 
-section {
-  border: 2px solid black;
-  width: 100px;
-  height: 100px;
-  /* position: absolute; */
-  border-radius: 30%;
+  section {
+    /* border: 2px solid black; */
+    width: 100px;
+    height: 100px;
 
-}
+    /* position: absolute; */
+    /* border-radius: 30%; */
 
-/* section#body {
+  }
+
+  /* section#body {
   width: 350px;
   height: 350px;
   top: 25%;
@@ -64,36 +87,37 @@ section {
   transition: 2s;
 } */
 
-section#green {
-  background-color: green;
-}
+  section#green {
+    background-color: green;
+  }
 
-section#red {
-  background-color: red;
-}
+  section#red {
+    background-color: red;
+  }
 
-section#blue {
-  background-color: blue;
-}
+  section#blue {
+    background-color: blue;
+  }
 
-section#orange {
-  background-color: orange;
-}
+  section#orange {
+    background-color: orange;
+  }
 
-.effect-square-body {
-  background-color: red;
-  transition: 2s;
-}
+  .effect-square-body {
+    background-color: red;
+    transition: 2s;
+  }
 
 
-button {
-  width: 200px;
-  height: 50px;
-  background-color: black;
-  border-radius: 16px;
-  font-size: 32px;
-  color: white;
-  position: absolute;
-  bottom: 0;
-  left: 20%;
+  button {
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border-radius: 16px;
+    font-size: 32px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+  }
 }

@@ -42,23 +42,47 @@
 //   ease : 'back'
 // })
 let tl = gsap.timeline({
-  repeat : 10,
-  yoyo : true,
+  // repeat : 1,
+  // yoyo : true,
 })
 
 tl.from('.circle', {
-  duration: 1,
+  duration: 2,
   opacity: 0,
   y: 'random(-200, 200)',
   x: 'random(-300, 300)',
+  borderRadius: '50%',
   rotation: 360,
   stagger: 0.25
 })
 
-tl.to('.circle', {
-  duration: 0.5,
+
+let xtl = gsap.timeline()
+
+xtl.from('#body', {
+  duration: 3,
+  scale: 0,
   opacity: 0,
-  x: 'random(-300, 300)',
-  ease: 'power3.out',
-},
-'circlesOutro')
+  rotation: 180
+})
+
+xtl.to('#body', {
+  // scale: 1,
+  opacity: 1
+
+})
+
+document.getElementById('display').addEventListener('click', () => {
+  tl.reverse()
+  xtl.reverse()
+
+})
+
+// tl.to('.circle', {
+//   duration: .5,
+//   opacity: 0,
+//   x: 'random(-300, 300)',
+//   borderRadius: '50%',
+//   ease: 'power3.out',
+// },
+// 'circlesOutro')
