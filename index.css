@@ -40,36 +40,60 @@
 body {
   border: 2px solid black;
   height: 850px;
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
 }
 
 section {
   border: 2px solid black;
   width: 100px;
   height: 100px;
-  position: absolute;
+  /* position: absolute; */
+  border-radius: 30%;
 
 }
 
+/* section#body {
+  width: 350px;
+  height: 350px;
+  top: 25%;
+  left: 25%;
+  transition: 2s;
+} */
+
 section#green {
   background-color: green;
-  right: 5%;
 }
 
 section#red {
   background-color: red;
-  top: 20%;
-  left: 20%;
 }
 
 section#blue {
   background-color: blue;
-  bottom: 50%;
-  top: 20%;
 }
 
 section#orange {
   background-color: orange;
-  right: 20%;
-  top: 20%;
+}
+
+.effect-square-body {
+  background-color: red;
+  transition: 2s;
+}
+
+
+button {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  border-radius: 16px;
+  font-size: 32px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
 }

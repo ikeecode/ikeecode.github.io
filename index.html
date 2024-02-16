@@ -5,31 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./index.css">
-  <script src="./index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="./index.js" defer></script>
   <title>imKaba</title>
 </head>
 
 <body>
 
-  <section draggable="true" id="green" ondragstart="drag(event)">
+  <section draggable="true" id="green" ondragstart="drag(event)" class="circle">
 
   </section>
 
-  <section draggable="true" id="red" ondragstart="drag(event)">
+  <section draggable="true" id="red" ondragstart="drag(event)" class="circle">
 
   </section>
 
-  <section draggable="true" id="blue" ondragstart="drag(event)">
+  <section draggable="true" id="blue" ondragstart="drag(event)" class="circle">
 
   </section>
 
-  <section draggable="true" id="orange" ondragstart="drag(event)">
+  <section draggable="true" id="orange" ondragstart="drag(event)" class="circle">
 
   </section>
 
-  <section id="body" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <section id="body" ondrop="drop(event)" ondragover="allowDrop(event)" class="circle">
 
   </section>
+
+  <!-- <button id="display">display</button> -->
 
 </body>
 
