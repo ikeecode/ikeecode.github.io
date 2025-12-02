@@ -1,86 +1,78 @@
-let main = document.querySelector('article.main')
-let articles = document.querySelectorAll('article.x')
-let resources = document.querySelector('#resources')
-let github = document.querySelector('#github')
-let sociallife = document.querySelector('#sociallife')
-let hobbies = document.querySelector('#hobbies')
-let submain = document.querySelector('#submain')
-let displayPresentation = document.querySelector('article.displayPresentation')
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
 
+// Active nav link highlighting
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
 
+window.addEventListener('scroll', () => {
+  let current = '';
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    
+    if (pageYOffset >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
 
-colors = {
-  resources: "rgba(0, 90, 158, 1)",
-  github : "rgba(45, 51, 59, 1)",
-  sociallife: "rgba(125, 226, 209, 1)",
-  hobbies: "rgba(255, 255, 255, 1)"
+// Add active class styling in CSS
+const style = document.createElement('style');
+style.textContent = `
+  .nav-link.active {
+    color: var(--google-blue);
+    border-bottom: 2px solid var(--google-blue);
+    padding-bottom: 0.25rem;
+  }
+`;
+document.head.appendChild(style);
+
+// Modal functionality for Google Drive video
+const modal = document.getElementById('videoModal');
+const btn = document.getElementById('openVideoModal');
+const span = document.getElementsByClassName('close-modal')[0];
+const videoFrame = document.getElementById('videoFrame');
+
+// Open modal when button is clicked
+if (btn) {
+  btn.onclick = function() {
+    modal.style.display = 'block';
+    videoFrame.src = 'https://drive.google.com/file/d/11oeeAW_4cYbAS730q7boIC8FPIdVNqEz/preview';
+  }
 }
 
-main.addEventListener('click', (e)=>{
-  articles.forEach((item, i) => {
-    item.classList.toggle('hidden')
-  })
-
-  resources.classList.toggle('resources')
-  github.classList.toggle('github')
-  sociallife.classList.toggle('sociallife')
-  hobbies.classList.toggle('hobbies')
-
-})
-
-
-
-// main.addEventListener('mouseover', (e)=>{
-//   main.classList.add('presentation')
-//   main.querySelector('h1').classList.add('moveH1')
-// })
-//
-// main.addEventListener('mouseout', (e)=>{
-//   main.classList.remove('presentation')
-//   main.querySelector('h1').classList.remove('moveH1')
-//
-// })
-
-
-// resources.addEventListener('click', (e)=>{
-//   resources.classList.toggle('isSrinked')
-//   // resources.classList.toggle('resources')
-//   submain.classList.toggle("isHidden")
-//   resources.style.zIndex = "13"
-//   submain.style.backgroundColor = "rgba(0, 90, 158, 1)";
-//   submain.addEventListener('click', (e)=>{
-//     submain.classList.remove("isHidden")
-//     resources.classList.remove("isSrinked")
-//   })
-// })
-
-articles.forEach((item, i) => {
-  item.addEventListener('click', (e)=>{
-    putInPlace(item, colors[item.id])
-  })
-})
-
-
-
-// this function takes a variable from the blocks and put it
-// in place when then click is triggered, it puts the element in
-// font and the submain backgroundColor is set to the element background value
-function putInPlace(item, bgvalue) {
-  submain.innerHTML = `<h1>${item.innerText}</h1>`
-  item.classList.toggle("isSrinked")
-  submain.classList.toggle("isHidden")
-  submain.style.backgroundColor = `${bgvalue}`;
-  submain.addEventListener('click', (e)=>{
-    submain.classList.remove("isHidden")
-    item.classList.remove("isSrinked")
-  })
-
+// Close modal when X is clicked
+if (span) {
+  span.onclick = function() {
+    modal.style.display = 'none';
+    videoFrame.src = '';
+  }
 }
 
-
-displayPresentation.addEventListener('click', (e)=>{
-  main.classList.toggle('presentation')
-  main.querySelector('h1').classList.toggle('moveH1')
-  displayPresentation.classList.toggle('notDisplay')
-  displayPresentation.innerHTML = '<h5>Retour</h5>'
-})
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+    videoFrame.src = '';
+  }
+}
