@@ -979,6 +979,19 @@ body {
   66% { border-radius: 48% 52% 55% 45% / 52% 48% 52% 48%; }
 }
 
+/* Green button variant for Google Drive video */
+.video-button-green {
+  background: linear-gradient(135deg, var(--google-green) 0%, #5EBF6A 100%) !important;
+  box-shadow: 0 8px 24px rgba(52, 168, 83, 0.3) !important;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.video-button-green:hover {
+  box-shadow: 0 12px 32px rgba(52, 168, 83, 0.5) !important;
+}
+
 /* Google Drive video wrapper */
 .video-wrapper {
   position: relative;
@@ -1020,6 +1033,69 @@ body {
   0%, 100% { border-radius: 52% 48% 55% 45% / 48% 52% 48% 52%; }
   33% { border-radius: 48% 52% 45% 55% / 52% 48% 52% 48%; }
   66% { border-radius: 55% 45% 52% 48% / 45% 55% 45% 55%; }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  margin: 5% auto;
+  width: 85%;
+  max-width: 900px;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  color: var(--white);
+  font-size: 42px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1;
+  z-index: 1001;
+}
+
+.close-modal:hover {
+  color: var(--google-red);
+  transform: scale(1.2) rotate(90deg);
+}
+
+.modal-content iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .interests {

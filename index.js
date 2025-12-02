@@ -46,3 +46,33 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// Modal functionality for Google Drive video
+const modal = document.getElementById('videoModal');
+const btn = document.getElementById('openVideoModal');
+const span = document.getElementsByClassName('close-modal')[0];
+const videoFrame = document.getElementById('videoFrame');
+
+// Open modal when button is clicked
+if (btn) {
+  btn.onclick = function() {
+    modal.style.display = 'block';
+    videoFrame.src = 'https://drive.google.com/file/d/11oeeAW_4cYbAS730q7boIC8FPIdVNqEz/preview';
+  }
+}
+
+// Close modal when X is clicked
+if (span) {
+  span.onclick = function() {
+    modal.style.display = 'none';
+    videoFrame.src = '';
+  }
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+    videoFrame.src = '';
+  }
+}
