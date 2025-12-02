@@ -78,6 +78,38 @@ body {
   color: var(--google-blue);
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 101;
+}
+
+.hamburger-line {
+  width: 28px;
+  height: 3px;
+  background-color: var(--black);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
 /* Hero Section */
 .hero {
   margin-top: 60px;
@@ -1122,16 +1154,97 @@ body {
   background-color: var(--white);
   border-radius: 20px;
   font-size: 0.95rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: visible;
+}
+
+/* Unique organic geometric shapes for each interest */
+.interest-item:nth-child(1) {
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  animation: morphInterest1 9s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--white) 0%, #FFF5F5 100%);
+}
+
+.interest-item:nth-child(2) {
+  border-radius: 45% 55% 50% 50% / 65% 35% 55% 45%;
+  animation: morphInterest2 10s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--white) 0%, #F0F8FF 100%);
+}
+
+.interest-item:nth-child(3) {
+  border-radius: 70% 30% 60% 40% / 45% 55% 45% 55%;
+  animation: morphInterest3 8s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--white) 0%, #FFFEF0 100%);
+}
+
+.interest-item:nth-child(4) {
+  border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%;
+  animation: morphInterest4 11s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--white) 0%, #F0FFF5 100%);
+}
+
+.interest-item:nth-child(5) {
+  border-radius: 55% 45% 70% 30% / 50% 50% 50% 50%;
+  animation: morphInterest5 9.5s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--white) 0%, #FFF5F5 100%);
+}
+
+.interest-item:nth-child(6) {
+  border-radius: 50% 50% 40% 60% / 70% 30% 65% 35%;
+  animation: morphInterest6 10.5s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--white) 0%, #F0F8FF 100%);
+}
+
+.interest-item:nth-child(7) {
+  border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
+  animation: morphInterest7 8.5s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--white) 0%, #FFFEF0 100%);
+}
+
+/* Morphing animations for interests */
+@keyframes morphInterest1 {
+  0%, 100% { border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+  50% { border-radius: 45% 55% 40% 60% / 60% 40% 50% 50%; }
+}
+
+@keyframes morphInterest2 {
+  0%, 100% { border-radius: 45% 55% 50% 50% / 65% 35% 55% 45%; }
+  50% { border-radius: 55% 45% 50% 50% / 45% 55% 35% 65%; }
+}
+
+@keyframes morphInterest3 {
+  0%, 100% { border-radius: 70% 30% 60% 40% / 45% 55% 45% 55%; }
+  50% { border-radius: 40% 60% 30% 70% / 55% 45% 55% 45%; }
+}
+
+@keyframes morphInterest4 {
+  0%, 100% { border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%; }
+  50% { border-radius: 55% 45% 60% 40% / 40% 60% 40% 60%; }
+}
+
+@keyframes morphInterest5 {
+  0%, 100% { border-radius: 55% 45% 70% 30% / 50% 50% 50% 50%; }
+  50% { border-radius: 30% 70% 45% 55% / 50% 50% 50% 50%; }
+}
+
+@keyframes morphInterest6 {
+  0%, 100% { border-radius: 50% 50% 40% 60% / 70% 30% 65% 35%; }
+  50% { border-radius: 60% 40% 50% 50% / 35% 65% 30% 70%; }
+}
+
+@keyframes morphInterest7 {
+  0%, 100% { border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%; }
+  50% { border-radius: 50% 50% 35% 65% / 45% 55% 45% 55%; }
 }
 
 .interest-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .interest-icon {
@@ -1160,6 +1273,14 @@ body {
 
 .interest-item:nth-child(5) .interest-icon {
   color: var(--google-red);
+}
+
+.interest-item:nth-child(6) .interest-icon {
+  color: var(--google-blue);
+}
+
+.interest-item:nth-child(7) .interest-icon {
+  color: var(--google-green);
 }
 
 /* Contact Section */
@@ -1349,6 +1470,45 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    max-width: 300px;
+    padding: 2rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    gap: 0;
+    height: calc(100vh - 70px);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-medium);
+  }
+
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
   .hero {
     flex-direction: column;
     gap: 2rem;
@@ -1385,11 +1545,6 @@ body {
 
   .section-title {
     font-size: 1.8rem;
-  }
-
-  .nav-menu {
-    gap: 1rem;
-    font-size: 0.9rem;
   }
 
   .services-grid,
