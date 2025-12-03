@@ -200,6 +200,11 @@ body {
   animation: morph7 7.5s ease-in-out infinite;
 }
 
+.timeline-dot.shape-8 {
+  border-radius: 58% 42% 65% 35% / 48% 62% 38% 52%;
+  animation: morph8 9s ease-in-out infinite;
+}
+
 /* Organic morphing animations */
 @keyframes morph1 {
   0%, 100% { border-radius: 63% 37% 45% 55% / 72% 28% 68% 32%; }
@@ -234,6 +239,11 @@ body {
 @keyframes morph7 {
   0%, 100% { border-radius: 48% 52% 62% 38% / 75% 25% 55% 45%; }
   50% { border-radius: 38% 62% 52% 48% / 45% 55% 25% 75%; }
+}
+
+@keyframes morph8 {
+  0%, 100% { border-radius: 58% 42% 65% 35% / 48% 62% 38% 52%; }
+  50% { border-radius: 35% 65% 42% 58% / 52% 38% 62% 48%; }
 }
 
 /* Cell nucleus (inner circle) - varied positions and sizes */
@@ -300,6 +310,14 @@ body {
   top: 40%;
   left: 44%;
   border-radius: 45% 55% 50% 50%;
+}
+
+.timeline-dot.shape-8::before {
+  width: 15px;
+  height: 15px;
+  top: 44%;
+  left: 42%;
+  border-radius: 55% 45% 60% 40%;
 }
 
 @keyframes pulse {
@@ -830,10 +848,18 @@ body {
 }
 
 .skill-item:nth-child(10) {
-  background: linear-gradient(135deg, var(--google-green) 0%, #5EBF6A 100%);
+  background: linear-gradient(135deg, var(--google-blue) 0%, #6BA3FF 100%);
   color: var(--white);
   border-radius: 65% 35% 50% 50% / 40% 60% 45% 55%;
   animation: morphSkill10 9.5s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(66, 133, 244, 0.3);
+}
+
+.skill-item:nth-child(11) {
+  background: linear-gradient(135deg, var(--google-green) 0%, #5EBF6A 100%);
+  color: var(--white);
+  border-radius: 50% 50% 65% 35% / 45% 55% 50% 50%;
+  animation: morphSkill11 10s ease-in-out infinite;
   box-shadow: 0 8px 20px rgba(52, 168, 83, 0.3);
 }
 
@@ -931,6 +957,12 @@ body {
   0%, 100% { border-radius: 65% 35% 50% 50% / 40% 60% 45% 55%; }
   33% { border-radius: 50% 50% 35% 65% / 55% 45% 60% 40%; }
   66% { border-radius: 55% 45% 60% 40% / 65% 35% 50% 50%; }
+}
+
+@keyframes morphSkill11 {
+  0%, 100% { border-radius: 50% 50% 65% 35% / 45% 55% 50% 50%; }
+  33% { border-radius: 65% 35% 50% 50% / 50% 50% 55% 45%; }
+  66% { border-radius: 55% 45% 50% 50% / 35% 65% 50% 50%; }
 }
 
 .skill-item:hover {
@@ -1067,67 +1099,250 @@ body {
   66% { border-radius: 55% 45% 52% 48% / 45% 55% 45% 55%; }
 }
 
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
+/* Photo Gallery Section */
+.photo-gallery {
+  max-width: 1000px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.photo-gallery h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background: var(--white);
+  padding: 0.5rem;
+}
+
+.photo-item img {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  animation: fadeIn 0.3s ease;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Organic shapes for each photo */
+.photo-large {
+  grid-column: span 6;
+  grid-row: span 1;
+  max-height: 350px;
+  border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
+  animation: morphPhoto1 15s ease-in-out infinite;
+  transform: rotate(-2deg);
 }
 
-.modal-content {
-  position: relative;
-  margin: 5% auto;
-  width: 85%;
-  max-width: 900px;
-  animation: slideDown 0.4s ease;
+.photo-medium {
+  grid-column: span 3;
+  max-height: 280px;
+  border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
+  animation: morphPhoto2 13s ease-in-out infinite;
+  transform: rotate(1.5deg);
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
+.photo-small {
+  grid-column: span 3;
+  max-height: 280px;
+  border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
+  animation: morphPhoto3 14s ease-in-out infinite;
+  transform: rotate(-1deg);
+}
+
+/* Photo morphing animations */
+@keyframes morphPhoto1 {
+  0%, 100% {
+    border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+  50% {
+    border-radius: 48% 52% 55% 45% / 48% 52% 48% 52%;
   }
 }
 
-.close-modal {
-  position: absolute;
-  top: -45px;
-  right: 0;
-  color: var(--white);
-  font-size: 42px;
-  font-weight: 300;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  line-height: 1;
-  z-index: 1001;
+@keyframes morphPhoto2 {
+  0%, 100% {
+    border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
+  }
+  50% {
+    border-radius: 60% 40% 52% 48% / 55% 45% 55% 45%;
+  }
 }
 
-.close-modal:hover {
+@keyframes morphPhoto3 {
+  0%, 100% {
+    border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
+  }
+  50% {
+    border-radius: 50% 50% 35% 65% / 45% 55% 45% 55%;
+  }
+}
+
+.photo-item:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.photo-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Inner image border for Apple-style frame */
+.photo-item img {
+  border-radius: inherit;
+}
+
+/* Responsive photo gallery */
+@media (max-width: 768px) {
+  .photos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .photo-large,
+  .photo-medium,
+  .photo-small {
+    grid-column: span 1;
+    grid-row: span 1;
+    transform: rotate(0deg);
+  }
+
+  .photo-large {
+    min-height: 300px;
+    max-height: 300px;
+  }
+
+  .photo-medium,
+  .photo-small {
+    min-height: 250px;
+    max-height: 250px;
+  }
+}
+
+/* Languages Section */
+.languages {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.languages h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--black);
+}
+
+.languages-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.language-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  min-width: 140px;
+}
+
+/* Organic shapes for each language */
+.language-item:nth-child(1) {
+  border-radius: 60% 40% 50% 50% / 55% 45% 55% 45%;
+  animation: morphLanguage1 10s ease-in-out infinite;
+}
+
+.language-item:nth-child(2) {
+  border-radius: 50% 50% 60% 40% / 45% 55% 45% 55%;
+  animation: morphLanguage2 11s ease-in-out infinite;
+}
+
+.language-item:nth-child(3) {
+  border-radius: 45% 55% 50% 50% / 60% 40% 50% 50%;
+  animation: morphLanguage3 9s ease-in-out infinite;
+}
+
+.language-item:nth-child(4) {
+  border-radius: 55% 45% 55% 45% / 50% 50% 60% 40%;
+  animation: morphLanguage4 10.5s ease-in-out infinite;
+}
+
+/* Language morphing animations */
+@keyframes morphLanguage1 {
+  0%, 100% { border-radius: 60% 40% 50% 50% / 55% 45% 55% 45%; }
+  50% { border-radius: 50% 50% 40% 60% / 45% 55% 45% 55%; }
+}
+
+@keyframes morphLanguage2 {
+  0%, 100% { border-radius: 50% 50% 60% 40% / 45% 55% 45% 55%; }
+  50% { border-radius: 60% 40% 50% 50% / 55% 45% 55% 45%; }
+}
+
+@keyframes morphLanguage3 {
+  0%, 100% { border-radius: 45% 55% 50% 50% / 60% 40% 50% 50%; }
+  50% { border-radius: 50% 50% 55% 45% / 50% 50% 40% 60%; }
+}
+
+@keyframes morphLanguage4 {
+  0%, 100% { border-radius: 55% 45% 55% 45% / 50% 50% 60% 40%; }
+  50% { border-radius: 45% 55% 45% 55% / 60% 40% 50% 50%; }
+}
+
+.language-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.language-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* Google colors for each language name */
+.language-item:nth-child(1) .language-name {
   color: var(--google-red);
-  transform: scale(1.2) rotate(90deg);
 }
 
-.modal-content iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border: none;
+.language-item:nth-child(2) .language-name {
+  color: var(--google-blue);
+}
+
+.language-item:nth-child(3) .language-name {
+  color: var(--google-green);
+}
+
+.language-item:nth-child(4) .language-name {
+  color: var(--google-red);
+}
+
+.language-level {
+  font-size: 0.85rem;
+  color: var(--gray-dark);
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--gray-medium);
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .interests {
