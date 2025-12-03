@@ -116,11 +116,13 @@ body {
   padding: 80px 20px;
   text-align: center;
   background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
-  min-height: auto;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .timeline-left {
@@ -130,6 +132,7 @@ body {
   gap: 2rem;
   padding: 2rem;
   position: relative;
+  z-index: 10;
   min-width: 200px;
 }
 
@@ -370,6 +373,8 @@ body {
   flex: 1;
   max-width: 600px;
   text-align: left;
+  position: relative;
+  z-index: 10;
 }
 
 .hero-title {
@@ -1099,72 +1104,104 @@ body {
   66% { border-radius: 55% 45% 52% 48% / 45% 55% 45% 55%; }
 }
 
-/* Photo Gallery Section */
-.photo-gallery {
-  max-width: 1000px;
-  margin: 0 auto 4rem auto;
-  text-align: center;
-}
-
-.photo-gallery h3 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: var(--black);
-}
-
-.photos-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
-  padding: 0 1rem;
-}
-
-.photo-item {
-  position: relative;
+/* Floating Images */
+.floating-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-img {
+  position: absolute;
+  pointer-events: all;
   cursor: pointer;
   background: var(--white);
-  padding: 0.5rem;
+  padding: 0.4rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
 }
 
-.photo-item img {
+.floating-img::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(
+    0deg,
+    var(--google-blue),
+    var(--google-red),
+    var(--google-yellow),
+    var(--google-green),
+    var(--google-blue)
+  );
+  border-radius: inherit;
+  opacity: 0;
+  z-index: -1;
+  animation: orbitalGlow 4s linear infinite;
+  filter: blur(8px);
+  transition: opacity 0.3s ease;
+}
+
+.floating-img:hover::before {
+  opacity: 0.8;
+}
+
+@keyframes orbitalGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.floating-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: inherit;
   transition: transform 0.5s ease;
 }
 
-/* Organic shapes for each photo */
-.photo-large {
-  grid-column: span 6;
-  grid-row: span 1;
-  max-height: 350px;
+/* Individual floating image positioning and shapes */
+.floating-img-1 {
+  top: 15%;
+  right: 8%;
+  width: 210px;
+  height: 210px;
   border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
-  animation: morphPhoto1 15s ease-in-out infinite;
-  transform: rotate(-2deg);
+  animation: morphFloat1 15s ease-in-out infinite, float1 8s ease-in-out infinite;
 }
 
-.photo-medium {
-  grid-column: span 3;
-  max-height: 280px;
+.floating-img-2 {
+  bottom: 20%;
+  left: 12%;
+  width: 185px;
+  height: 185px;
   border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
-  animation: morphPhoto2 13s ease-in-out infinite;
-  transform: rotate(1.5deg);
+  animation: morphFloat2 13s ease-in-out infinite, float2 7s ease-in-out infinite;
 }
 
-.photo-small {
-  grid-column: span 3;
-  max-height: 280px;
+.floating-img-3 {
+  top: 50%;
+  right: 15%;
+  width: 165px;
+  height: 165px;
   border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
-  animation: morphPhoto3 14s ease-in-out infinite;
-  transform: rotate(-1deg);
+  animation: morphFloat3 14s ease-in-out infinite, float3 9s ease-in-out infinite;
 }
 
-/* Photo morphing animations */
-@keyframes morphPhoto1 {
+/* Morphing animations */
+@keyframes morphFloat1 {
   0%, 100% {
     border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
   }
@@ -1173,7 +1210,7 @@ body {
   }
 }
 
-@keyframes morphPhoto2 {
+@keyframes morphFloat2 {
   0%, 100% {
     border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
   }
@@ -1182,7 +1219,7 @@ body {
   }
 }
 
-@keyframes morphPhoto3 {
+@keyframes morphFloat3 {
   0%, 100% {
     border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
   }
@@ -1191,45 +1228,48 @@ body {
   }
 }
 
-.photo-item:hover {
-  transform: scale(1.05) rotate(0deg) !important;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+/* Floating animations */
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px) rotate(-3deg);
+  }
 }
 
-.photo-item:hover img {
-  transform: scale(1.1);
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(15px) translateX(-10px) rotate(5deg);
+  }
 }
 
-/* Inner image border for Apple-style frame */
-.photo-item img {
-  border-radius: inherit;
+@keyframes float3 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) translateX(5px) rotate(0deg);
+  }
 }
 
-/* Responsive photo gallery */
+.floating-img:hover {
+  transform: scale(1.15) rotate(0deg) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+.floating-img:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive floating images */
 @media (max-width: 768px) {
-  .photos-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .photo-large,
-  .photo-medium,
-  .photo-small {
-    grid-column: span 1;
-    grid-row: span 1;
-    transform: rotate(0deg);
-  }
-
-  .photo-large {
-    min-height: 300px;
-    max-height: 300px;
-  }
-
-  .photo-medium,
-  .photo-small {
-    min-height: 250px;
-    max-height: 250px;
+  .floating-images {
+    display: none;
   }
 }
 
@@ -1338,11 +1378,62 @@ body {
 
 .language-level {
   font-size: 0.85rem;
-  color: var(--gray-dark);
-  font-weight: 500;
-  padding: 0.25rem 0.75rem;
-  background-color: var(--gray-medium);
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  color: var(--white);
   border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Organic shapes and colors for each language level */
+.language-item:nth-child(1) .language-level {
+  background: linear-gradient(135deg, var(--google-red) 0%, #FF6B5A 100%);
+  border-radius: 65% 35% 60% 40% / 50% 50% 50% 50%;
+  animation: morphLevel1 8s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(234, 67, 53, 0.3);
+}
+
+.language-item:nth-child(2) .language-level {
+  background: linear-gradient(135deg, var(--google-blue) 0%, #6BA3FF 100%);
+  border-radius: 55% 45% 55% 45% / 60% 40% 60% 40%;
+  animation: morphLevel2 9s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+}
+
+.language-item:nth-child(3) .language-level {
+  background: linear-gradient(135deg, var(--google-green) 0%, #5EBF6A 100%);
+  border-radius: 48% 52% 65% 35% / 55% 45% 55% 45%;
+  animation: morphLevel3 7.5s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(52, 168, 83, 0.3);
+}
+
+.language-item:nth-child(4) .language-level {
+  background: linear-gradient(135deg, var(--google-yellow) 0%, #FFD54F 100%);
+  border-radius: 60% 40% 50% 50% / 65% 35% 50% 50%;
+  animation: morphLevel4 8.5s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(251, 188, 4, 0.3);
+  color: var(--black);
+}
+
+/* Language level morphing animations */
+@keyframes morphLevel1 {
+  0%, 100% { border-radius: 65% 35% 60% 40% / 50% 50% 50% 50%; }
+  50% { border-radius: 40% 60% 35% 65% / 50% 50% 50% 50%; }
+}
+
+@keyframes morphLevel2 {
+  0%, 100% { border-radius: 55% 45% 55% 45% / 60% 40% 60% 40%; }
+  50% { border-radius: 45% 55% 45% 55% / 40% 60% 40% 60%; }
+}
+
+@keyframes morphLevel3 {
+  0%, 100% { border-radius: 48% 52% 65% 35% / 55% 45% 55% 45%; }
+  50% { border-radius: 65% 35% 52% 48% / 45% 55% 45% 55%; }
+}
+
+@keyframes morphLevel4 {
+  0%, 100% { border-radius: 60% 40% 50% 50% / 65% 35% 50% 50%; }
+  50% { border-radius: 50% 50% 40% 60% / 50% 50% 35% 65%; }
 }
 
 .interests {
