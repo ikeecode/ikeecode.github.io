@@ -65,3 +65,40 @@ if (hamburger) {
     });
   });
 }
+
+// Random logo image selection
+const images = [
+  'img/blackshirtwithblackhat.jpg',
+  'img/nightviewsatsaly.jpeg',
+  'img/wellsuitedandsitting.jpeg'
+];
+
+// Select a random image
+const randomImage = images[Math.floor(Math.random() * images.length)];
+
+// Set the logo image
+const logoImage = document.getElementById('logoImage');
+if (logoImage) {
+  logoImage.src = randomImage;
+}
+
+// Randomly assign main and secondary image roles with random variants
+const heroImages = document.querySelectorAll('.hero-img');
+if (heroImages.length === 3) {
+  // Create array of indices and shuffle them
+  const indices = [0, 1, 2];
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+
+  // Random variant selection (1-3 for each role)
+  const mainVariant = Math.floor(Math.random() * 3) + 1; // 1, 2, or 3
+  const sec1Variant = Math.floor(Math.random() * 3) + 1;
+  const sec2Variant = Math.floor(Math.random() * 3) + 1;
+
+  // Assign random roles and variants to the images
+  heroImages[indices[0]].classList.add(`main-v${mainVariant}`);
+  heroImages[indices[1]].classList.add(`sec1-v${sec1Variant}`);
+  heroImages[indices[2]].classList.add(`sec2-v${sec2Variant}`);
+}

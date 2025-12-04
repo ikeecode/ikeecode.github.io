@@ -54,11 +54,36 @@ body {
   align-items: center;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--google-blue);
+  transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+  border-color: var(--google-red);
+  transform: scale(1.05);
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--google-blue);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--google-red);
 }
 
 .nav-menu {
@@ -1104,22 +1129,16 @@ body {
   66% { border-radius: 55% 45% 52% 48% / 45% 55% 45% 55%; }
 }
 
-/* Floating Images */
-.floating-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
+/* Hero Images Composition */
+.hero-images {
+  position: relative;
+  width: 550px;
+  height: 550px;
+  z-index: 10;
 }
 
-.floating-img {
+.hero-img {
   position: absolute;
-  pointer-events: all;
-  cursor: pointer;
   background: var(--white);
   padding: 0.4rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -1127,7 +1146,7 @@ body {
   overflow: visible;
 }
 
-.floating-img::before {
+.hero-img::before {
   content: '';
   position: absolute;
   top: -4px;
@@ -1150,7 +1169,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.floating-img:hover::before {
+.hero-img:hover::before {
   opacity: 0.8;
 }
 
@@ -1163,7 +1182,7 @@ body {
   }
 }
 
-.floating-img img {
+.hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1172,103 +1191,169 @@ body {
   transition: transform 0.5s ease;
 }
 
-/* Individual floating image positioning and shapes */
-.floating-img-1 {
-  top: 15%;
-  right: 8%;
+/* Main image variants (randomly assigned) */
+.hero-img.main-v1 {
+  width: 380px;
+  height: 380px;
+  top: 48%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
+  animation: morphMain1 15s ease-in-out infinite;
+}
+
+.hero-img.main-v2 {
+  width: 400px;
+  height: 400px;
+  top: 52%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 48% 52% 60% 40% / 45% 55% 50% 50%;
+  animation: morphMain2 14s ease-in-out infinite;
+}
+
+.hero-img.main-v3 {
+  width: 390px;
+  height: 390px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 60% 40% 55% 45% / 48% 52% 55% 45%;
+  animation: morphMain3 16s ease-in-out infinite;
+}
+
+/* Secondary-1 variants (top-right area) */
+.hero-img.sec1-v1 {
+  width: 200px;
+  height: 200px;
+  top: -5px;
+  right: -15px;
+  z-index: 2;
+  border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
+  animation: morphSec1_1 13s ease-in-out infinite;
+}
+
+.hero-img.sec1-v2 {
   width: 210px;
   height: 210px;
-  border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
-  animation: morphFloat1 15s ease-in-out infinite, float1 8s ease-in-out infinite;
+  top: 5px;
+  right: -10px;
+  z-index: 2;
+  border-radius: 65% 35% 50% 50% / 60% 40% 55% 45%;
+  animation: morphSec1_2 12s ease-in-out infinite;
 }
 
-.floating-img-2 {
-  bottom: 20%;
-  left: 12%;
-  width: 185px;
-  height: 185px;
-  border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
-  animation: morphFloat2 13s ease-in-out infinite, float2 7s ease-in-out infinite;
+.hero-img.sec1-v3 {
+  width: 215px;
+  height: 215px;
+  top: -10px;
+  right: -5px;
+  z-index: 2;
+  border-radius: 55% 45% 65% 35% / 50% 50% 60% 40%;
+  animation: morphSec1_3 14s ease-in-out infinite;
 }
 
-.floating-img-3 {
-  top: 50%;
-  right: 15%;
-  width: 165px;
-  height: 165px;
+/* Secondary-2 variants (bottom-left area) */
+.hero-img.sec2-v1 {
+  width: 190px;
+  height: 190px;
+  bottom: 15px;
+  left: -10px;
+  z-index: 2;
   border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
-  animation: morphFloat3 14s ease-in-out infinite, float3 9s ease-in-out infinite;
+  animation: morphSec2_1 14s ease-in-out infinite;
 }
 
-/* Morphing animations */
-@keyframes morphFloat1 {
-  0%, 100% {
-    border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
-  }
-  50% {
-    border-radius: 48% 52% 55% 45% / 48% 52% 48% 52%;
-  }
+.hero-img.sec2-v2 {
+  width: 205px;
+  height: 205px;
+  bottom: 5px;
+  left: 0px;
+  z-index: 2;
+  border-radius: 50% 50% 70% 30% / 45% 55% 60% 40%;
+  animation: morphSec2_2 13s ease-in-out infinite;
 }
 
-@keyframes morphFloat2 {
-  0%, 100% {
-    border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
-  }
-  50% {
-    border-radius: 60% 40% 52% 48% / 55% 45% 55% 45%;
-  }
+.hero-img.sec2-v3 {
+  width: 195px;
+  height: 195px;
+  bottom: 10px;
+  left: -15px;
+  z-index: 2;
+  border-radius: 58% 42% 62% 38% / 50% 50% 65% 35%;
+  animation: morphSec2_3 15s ease-in-out infinite;
 }
 
-@keyframes morphFloat3 {
-  0%, 100% {
-    border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
-  }
-  50% {
-    border-radius: 50% 50% 35% 65% / 45% 55% 45% 55%;
-  }
+/* Morphing animations for main variants */
+@keyframes morphMain1 {
+  0%, 100% { border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%; }
+  50% { border-radius: 48% 52% 55% 45% / 48% 52% 48% 52%; }
 }
 
-/* Floating animations */
-@keyframes float1 {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(-5deg);
-  }
-  50% {
-    transform: translateY(-20px) translateX(10px) rotate(-3deg);
-  }
+@keyframes morphMain2 {
+  0%, 100% { border-radius: 48% 52% 60% 40% / 45% 55% 50% 50%; }
+  50% { border-radius: 60% 40% 52% 48% / 50% 50% 55% 45%; }
 }
 
-@keyframes float2 {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(3deg);
-  }
-  50% {
-    transform: translateY(15px) translateX(-10px) rotate(5deg);
-  }
+@keyframes morphMain3 {
+  0%, 100% { border-radius: 60% 40% 55% 45% / 48% 52% 55% 45%; }
+  50% { border-radius: 55% 45% 40% 60% / 55% 45% 52% 48%; }
 }
 
-@keyframes float3 {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(-2deg);
-  }
-  50% {
-    transform: translateY(-10px) translateX(5px) rotate(0deg);
-  }
+/* Morphing animations for secondary-1 variants */
+@keyframes morphSec1_1 {
+  0%, 100% { border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%; }
+  50% { border-radius: 60% 40% 52% 48% / 55% 45% 55% 45%; }
 }
 
-.floating-img:hover {
-  transform: scale(1.15) rotate(0deg) !important;
+@keyframes morphSec1_2 {
+  0%, 100% { border-radius: 65% 35% 50% 50% / 60% 40% 55% 45%; }
+  50% { border-radius: 50% 50% 35% 65% / 55% 45% 40% 60%; }
+}
+
+@keyframes morphSec1_3 {
+  0%, 100% { border-radius: 55% 45% 65% 35% / 50% 50% 60% 40%; }
+  50% { border-radius: 65% 35% 45% 55% / 60% 40% 50% 50%; }
+}
+
+/* Morphing animations for secondary-2 variants */
+@keyframes morphSec2_1 {
+  0%, 100% { border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%; }
+  50% { border-radius: 50% 50% 35% 65% / 45% 55% 45% 55%; }
+}
+
+@keyframes morphSec2_2 {
+  0%, 100% { border-radius: 50% 50% 70% 30% / 45% 55% 60% 40%; }
+  50% { border-radius: 70% 30% 50% 50% / 60% 40% 55% 45%; }
+}
+
+@keyframes morphSec2_3 {
+  0%, 100% { border-radius: 58% 42% 62% 38% / 50% 50% 65% 35%; }
+  50% { border-radius: 62% 38% 42% 58% / 65% 35% 50% 50%; }
+}
+
+.hero-img:hover {
+  transform: scale(1.15);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
-  z-index: 100;
+  z-index: 100 !important;
 }
 
-.floating-img:hover img {
+.hero-img.main-v1:hover,
+.hero-img.main-v2:hover,
+.hero-img.main-v3:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.hero-img:hover img {
   transform: scale(1.05);
 }
 
-/* Responsive floating images */
+/* Responsive hero images */
 @media (max-width: 768px) {
-  .floating-images {
+  .hero-images {
     display: none;
   }
 }
@@ -1820,7 +1905,12 @@ body {
     gap: 2rem;
   }
 
+  .hero-content {
+    order: 1;
+  }
+
   .timeline-left {
+    order: 2;
     min-width: auto;
     width: 100%;
     padding: 1.5rem;
