@@ -11,7 +11,10 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
-        <a href="#home" class="logo">MK</a>
+        <div class="logo-container">
+          <img src="" alt="Logo" class="logo-image" id="logoImage">
+          <a href="#home" class="logo">MK</a>
+        </div>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -30,19 +33,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <!-- Floating Images -->
-      <div class="floating-images">
-        <div class="floating-img floating-img-1">
-          <img src="img/blackshirtwithblackhat.jpg" alt="Mahamadou Kaba" loading="lazy">
-        </div>
-        <div class="floating-img floating-img-2">
-          <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
-        </div>
-        <div class="floating-img floating-img-3">
-          <img src="img/wellsuitedandsitting.jpeg" alt="Professional portrait" loading="lazy">
-        </div>
-      </div>
-
       <!-- Timeline on the left -->
       <div class="timeline-left">
         <div class="timeline-item">
@@ -103,12 +93,25 @@
         </div>
       </div>
 
-      <!-- Hero content on the right -->
+      <!-- Hero content in the middle -->
       <div class="hero-content">
         <h1 class="hero-title">Mahamadou Kaba</h1>
         <p class="hero-subtitle">Data Engineer & IT Specialist</p>
         <p class="hero-description">Securing, Building, and Analyzing Digital Assets</p>
         <a href="#projects" class="cta-button">See My Work</a>
+      </div>
+
+      <!-- Images on the right -->
+      <div class="hero-images">
+        <div class="hero-img hero-img-1">
+          <img src="img/blackshirtwithblackhat.jpg" alt="Mahamadou Kaba" loading="lazy">
+        </div>
+        <div class="hero-img hero-img-2">
+          <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
+        </div>
+        <div class="hero-img hero-img-3">
+          <img src="img/wellsuitedandsitting.jpeg" alt="Professional portrait" loading="lazy">
+        </div>
       </div>
     </section>
 

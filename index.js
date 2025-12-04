@@ -65,3 +65,19 @@ if (hamburger) {
     });
   });
 }
+
+// Random logo image selection
+const images = [
+  'img/blackshirtwithblackhat.jpg',
+  'img/nightviewsatsaly.jpeg',
+  'img/wellsuitedandsitting.jpeg'
+];
+
+// Select a random image
+const randomImage = images[Math.floor(Math.random() * images.length)];
+
+// Set the logo image
+const logoImage = document.getElementById('logoImage');
+if (logoImage) {
+  logoImage.src = randomImage;
+}
