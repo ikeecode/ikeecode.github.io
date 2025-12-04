@@ -1132,8 +1132,8 @@ body {
 /* Hero Images Composition */
 .hero-images {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 550px;
+  height: 550px;
   z-index: 10;
 }
 
@@ -1193,8 +1193,8 @@ body {
 
 /* Main image variants (randomly assigned) */
 .hero-img.main-v1 {
-  width: 320px;
-  height: 320px;
+  width: 380px;
+  height: 380px;
   top: 48%;
   left: 52%;
   transform: translate(-50%, -50%);
@@ -1204,8 +1204,8 @@ body {
 }
 
 .hero-img.main-v2 {
-  width: 340px;
-  height: 340px;
+  width: 400px;
+  height: 400px;
   top: 52%;
   left: 48%;
   transform: translate(-50%, -50%);
@@ -1215,8 +1215,8 @@ body {
 }
 
 .hero-img.main-v3 {
-  width: 330px;
-  height: 330px;
+  width: 390px;
+  height: 390px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1227,8 +1227,8 @@ body {
 
 /* Secondary-1 variants (top-right area) */
 .hero-img.sec1-v1 {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   top: -5px;
   right: -15px;
   z-index: 2;
@@ -1237,8 +1237,8 @@ body {
 }
 
 .hero-img.sec1-v2 {
-  width: 170px;
-  height: 170px;
+  width: 210px;
+  height: 210px;
   top: 5px;
   right: -10px;
   z-index: 2;
@@ -1247,8 +1247,8 @@ body {
 }
 
 .hero-img.sec1-v3 {
-  width: 175px;
-  height: 175px;
+  width: 215px;
+  height: 215px;
   top: -10px;
   right: -5px;
   z-index: 2;
@@ -1258,8 +1258,8 @@ body {
 
 /* Secondary-2 variants (bottom-left area) */
 .hero-img.sec2-v1 {
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
   bottom: 15px;
   left: -10px;
   z-index: 2;
@@ -1268,8 +1268,8 @@ body {
 }
 
 .hero-img.sec2-v2 {
-  width: 165px;
-  height: 165px;
+  width: 205px;
+  height: 205px;
   bottom: 5px;
   left: 0px;
   z-index: 2;
@@ -1278,8 +1278,8 @@ body {
 }
 
 .hero-img.sec2-v3 {
-  width: 155px;
-  height: 155px;
+  width: 195px;
+  height: 195px;
   bottom: 10px;
   left: -15px;
   z-index: 2;
@@ -1905,7 +1905,12 @@ body {
     gap: 2rem;
   }
 
+  .hero-content {
+    order: 1;
+  }
+
   .timeline-left {
+    order: 2;
     min-width: auto;
     width: 100%;
     padding: 1.5rem;
