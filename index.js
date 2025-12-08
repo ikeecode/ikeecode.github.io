@@ -102,6 +102,45 @@ if (heroImages.length === 3) {
   heroImages[indices[2]].classList.add(`sec2-v${sec2Variant}`);
 }
 
+// Hero metric and CTA color randomizer
+(() => {
+  const metricCards = document.querySelectorAll('.hero-metric');
+  const cta = document.querySelector('.cta-button');
+
+  const metricPalette = [
+    { bg: 'rgba(234, 67, 53, 0.12)', border: 'rgba(234, 67, 53, 0.32)' },   // Google red
+    { bg: 'rgba(251, 188, 4, 0.14)', border: 'rgba(251, 188, 4, 0.32)' },    // Google yellow
+    { bg: 'rgba(66, 133, 244, 0.14)', border: 'rgba(66, 133, 244, 0.32)' },  // Google blue
+    { bg: 'rgba(52, 168, 83, 0.14)', border: 'rgba(52, 168, 83, 0.32)' }     // Google green
+  ];
+
+  const ctaPalette = [
+    { bg: '#EA4335', shadow: 'rgba(234, 67, 53, 0.35)' },
+    { bg: '#FBBC04', shadow: 'rgba(251, 188, 4, 0.35)' },
+    { bg: '#4285F4', shadow: 'rgba(66, 133, 244, 0.35)' },
+    { bg: '#34A853', shadow: 'rgba(52, 168, 83, 0.35)' }
+  ];
+
+  const randomRadius = () => {
+    const vals = Array.from({ length: 4 }, () => `${12 + Math.floor(Math.random() * 8)}px`);
+    return `${vals[0]} ${vals[1]} ${vals[2]} ${vals[3]}`;
+  };
+
+  const shuffled = [...metricPalette].sort(() => Math.random() - 0.5);
+  metricCards.forEach((card, idx) => {
+    const palette = shuffled[idx % shuffled.length];
+    card.style.setProperty('--metric-bg', palette.bg);
+    card.style.setProperty('--metric-border', palette.border);
+    card.style.setProperty('--metric-radius', randomRadius());
+  });
+
+  if (cta) {
+    const pick = ctaPalette[Math.floor(Math.random() * ctaPalette.length)];
+    cta.style.setProperty('--cta-bg', pick.bg);
+    cta.style.setProperty('--cta-shadow', pick.shadow);
+  }
+})();
+
 // Presentations modal logic
 (() => {
   const modal = document.querySelector('.presentations-modal');

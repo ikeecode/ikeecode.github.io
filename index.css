@@ -439,6 +439,31 @@ body {
   z-index: 10;
 }
 
+.hero-accent {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  width: 320px;
+  height: 220px;
+  background: radial-gradient(circle at 20% 20%, rgba(66, 133, 244, 0.22), transparent 55%),
+              radial-gradient(circle at 80% 30%, rgba(234, 67, 53, 0.18), transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(52, 168, 83, 0.2), transparent 55%);
+  filter: blur(32px);
+  z-index: -1;
+  animation: accentPulse 12s ease-in-out infinite;
+}
+
+@keyframes accentPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -455,6 +480,13 @@ body {
   text-align: left;
 }
 
+.hero-hook {
+  font-size: 1rem;
+  color: var(--black);
+  margin-bottom: 0.8rem;
+  max-width: 520px;
+}
+
 .hero-description {
   font-size: 1.1rem;
   color: var(--gray-dark);
@@ -462,28 +494,65 @@ body {
   text-align: left;
 }
 
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-metric {
+  padding: 0.9rem 1rem;
+  border-radius: var(--metric-radius, 16px);
+  background: var(--metric-bg, linear-gradient(135deg, #ffffff, #f5f7fb));
+  border: 1px solid var(--metric-border, var(--gray-medium));
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+}
+
 .cta-button {
   display: inline-block;
-  padding: 12px 32px;
-  background-color: var(--google-blue);
+  padding: 14px 28px;
+  background-color: var(--cta-bg, var(--google-blue));
   color: var(--white);
   text-decoration: none;
-  border-radius: 45% 55% 52% 48% / 48% 62% 38% 52%;
+  border-radius: 12px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
-  animation: morphButton 8s ease-in-out infinite;
+  box-shadow: 0 2px 8px var(--cta-shadow, rgba(66, 133, 244, 0.3));
 }
 
 .cta-button:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 16px rgba(66, 133, 244, 0.4);
+  box-shadow: 0 4px 16px var(--cta-shadow, rgba(66, 133, 244, 0.4));
 }
 
-/* CTA button morphing animation */
-@keyframes morphButton {
-  0%, 100% { border-radius: 45% 55% 52% 48% / 48% 62% 38% 52%; }
-  50% { border-radius: 55% 45% 48% 52% / 52% 38% 62% 48%; }
+.hero-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.logo-chip {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #4b5563;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
 }
 
 /* Section Title */
