@@ -1,0 +1,48 @@
+/* ============================================
+   ACCESSIBILITY FOCUS STATES
+   ============================================ */
+
+/* Focus states for keyboard navigation */
+.nav-link:focus-visible,
+.cta-button:focus-visible,
+.hamburger:focus-visible,
+.social-link:focus-visible,
+.venture-link:focus-visible,
+.video-link-button:focus-visible,
+.presentation-open:focus-visible,
+.presentation-download:focus-visible,
+.modal-close:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--google-blue);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* Focus for form elements */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: none;
+    border-color: var(--google-blue);
+    box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.15);
+}
+
+/* Skip to content link for screen readers */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--google-blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    z-index: 1000;
+    font-weight: 600;
+    border-radius: 0 0 8px 0;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    outline: 3px solid var(--google-yellow);
+}

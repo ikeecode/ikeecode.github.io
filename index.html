@@ -1,563 +1,698 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js" charset="utf-8" defer></script>
-    <title>Mahamadou Kaba - Data Engineer & IT Specialist</title>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo-container">
-          <img src="" alt="Logo" class="logo-image" id="logoImage">
-          <a href="#home" class="logo">MK</a>
-        </div>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#entrepreneurship" class="nav-link">Ventures</a></li>
-          <li><a href="#presentations" class="nav-link presentations-link">Presentations</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <!-- Timeline on the left -->
-      <div class="timeline-left">
-        <div class="timeline-item">
-          <div class="timeline-dot google-blue shape-1"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2025</span>
-            <p>ARTP Senegal</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot google-yellow shape-2"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2024</span>
-            <p>Mest Africa</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot google-red shape-3"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2023</span>
-            <p>Deloitte</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot google-green shape-4"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2022</span>
-            <p>Sonatel/Orange</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot google-yellow shape-8"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2022</span>
-            <p>Super Codeurs Trainer</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot google-blue shape-5"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2021</span>
-            <p>PCO Partners</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot google-yellow shape-6"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2020</span>
-            <p>Vivializ Saurl</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot google-red shape-7"></div>
-          <div class="timeline-label">
-            <span class="timeline-year">2018</span>
-            <p>Laboratoire URANUS/UCAD</p>
-          </div>
-        </div>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Hero content in the middle -->
-      <div class="hero-content">
-        <div class="hero-accent"></div>
-        <h1 class="hero-title">Mahamadou Kaba</h1>
-        <p class="hero-subtitle">Data Engineer & IT Specialist</p>
-        <p class="hero-hook">Data security, APIs, and analytics for teams that move fast—without breaking compliance.</p>
-        <p class="hero-description">Securing, Building, and Analyzing Digital Assets</p>
-        <div class="hero-metrics">
-          <div class="hero-metric">
-            <span class="metric-value">8+</span>
-            <span class="metric-label">Enterprise projects</span>
-          </div>
-          <div class="hero-metric">
-            <span class="metric-value">3</span>
-            <span class="metric-label">Startups launched</span>
-          </div>
-          <div class="hero-metric">
-            <span class="metric-value">2</span>
-            <span class="metric-label">Countries served</span>
-          </div>
-        </div>
-        <a href="#projects" class="cta-button">See My Work</a>
-      </div>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Data Engineer & IT Specialist with 8+ enterprise projects. Specialized in security audits, API development, and data engineering in Senegal and Ghana.">
+  <meta name="keywords"
+    content="Data Engineer, IT Specialist, Security Audit, API Development, Data Analytics, GDPR Compliance, Senegal, Ghana, ARTP, Deloitte, Orange">
+  <meta name="author" content="Mahamadou Kaba">
 
-      <!-- Images on the right -->
-      <div class="hero-images">
-        <div class="hero-img hero-img-1">
-          <img src="img/blackshirtwithblackhat.jpg" alt="Mahamadou Kaba" loading="lazy">
-        </div>
-        <div class="hero-img hero-img-2">
-          <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
-        </div>
-        <div class="hero-img hero-img-3">
-          <img src="img/wellsuitedandsitting.jpeg" alt="Professional portrait" loading="lazy">
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ikeecode.github.io/">
+  <meta property="og:title" content="Mahamadou Kaba - Data Engineer & IT Specialist">
+  <meta property="og:description"
+    content="Data security, APIs, and analytics for teams that move fast—without breaking compliance.">
+  <meta property="og:image" content="https://ikeecode.github.io/img/wellsuitedandsitting.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ikeecode.github.io/">
+  <meta name="twitter:title" content="Mahamadou Kaba - Data Engineer & IT Specialist">
+  <meta name="twitter:description"
+    content="Data security, APIs, and analytics for teams that move fast—without breaking compliance.">
+  <meta name="twitter:image" content="https://ikeecode.github.io/img/wellsuitedandsitting.jpeg">
+  <meta name="twitter:creator" content="@mahaKaba">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ikeecode.github.io/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="accessibility.css">
+  <script src="index.js" charset="utf-8" defer></script>
+
+  <title>Mahamadou Kaba - Data Engineer & IT Specialist</title>
+
+  <!-- Structured Data / Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mahamadou Kaba",
+      "jobTitle": "Data Engineer & IT Specialist",
+      "url": "https://ikeecode.github.io",
+      "image": "https://ikeecode.github.io/img/wellsuitedandsitting.jpeg",
+      "sameAs": [
+        "https://www.linkedin.com/in/mahamadou-kaba-mk/",
+        "https://github.com/ikeecode",
+        "https://twitter.com/mahaKaba",
+        "https://www.instagram.com/maha_kaba/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Accra",
+        "addressCountry": "GH"
+      },
+      "alumniOf": "MEST Africa",
+      "workLocation": [
+        {
+          "@type": "Place",
+          "name": "Accra, Ghana"
+        },
+        {
+          "@type": "Place",
+          "name": "Dakar, Senegal"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container">
+        <img src="" alt="Mahamadou Kaba - Professional portrait" class="logo-image" id="logoImage">
+        <a href="#home" class="logo">MK</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#entrepreneurship" class="nav-link">Ventures</a></li>
+        <li><a href="#presentations" class="nav-link presentations-link">Presentations</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <!-- Timeline on the left -->
+    <div class="timeline-left">
+      <div class="timeline-item">
+        <div class="timeline-dot google-blue shape-1"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2025</span>
+          <p>ARTP Senegal</p>
         </div>
       </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-      <div class="container">
-        <h2 class="section-title">Services</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon google-red"></div>
-            <h3>Security Audits</h3>
-            <p>Comprehensive security audits identifying vulnerabilities and strengthening information security policies.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon google-yellow"></div>
-            <h3>API Development</h3>
-            <p>Custom API design and implementation for seamless system integration and operational efficiency.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon google-blue"></div>
-            <h3>Data Engineering</h3>
-            <p>Large-scale data collection, processing, and analytics to drive informed business decisions.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon google-green"></div>
-            <h3>Risk Management</h3>
-            <p>Data risk management and GDPR compliance support for secure and regulated operations.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon google-red"></div>
-            <h3>IT Consultancy</h3>
-            <p>Strategic IT consulting for businesses and startups to optimize technology infrastructure and drive digital transformation.</p>
-          </div>
+      <div class="timeline-item">
+        <div class="timeline-dot google-yellow shape-2"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2024</span>
+          <p>Mest Africa</p>
         </div>
       </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">Client Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header google-red"></div>
-            <div class="project-content">
-              <h3>Security Audit for Confidential Corporation</h3>
-              <p>Led a comprehensive security audit identifying critical vulnerabilities and proposing solutions to enhance security posture.</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-header google-yellow"></div>
-            <div class="project-content">
-              <h3>API Development for Deloitte Senegal</h3>
-              <p>Designed custom APIs facilitating effective system integration, improving productivity and optimizing mission processes.</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-header google-blue"></div>
-            <div class="project-content">
-              <h3>Data Engineering for Orange-Sonatel</h3>
-              <p>Led data engineering project collecting and transforming complex data into actionable insights with significant efficiency gains.</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-header google-green"></div>
-            <div class="project-content">
-              <h3>GDPR Compliance for Maxool Web App</h3>
-              <p>Assisted in achieving GDPR compliance by developing privacy policies, data management processes, and staff training.</p>
-            </div>
-          </div>
+      <div class="timeline-item">
+        <div class="timeline-dot google-red shape-3"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2023</span>
+          <p>Deloitte</p>
         </div>
       </div>
-    </section>
-
-    <!-- Entrepreneurship Section -->
-    <section id="entrepreneurship" class="entrepreneurship">
-      <div class="container">
-        <h2 class="section-title">Entrepreneurship</h2>
-        <p class="section-subtitle">Ventures & Startups I'm Building</p>
-        <div class="ventures-grid">
-          <div class="venture-card">
-            <div class="venture-header google-red"></div>
-            <div class="venture-content">
-              <h3>Intelli Concierge</h3>
-              <p class="venture-status">🚀 In Development</p>
-              <p>AI-powered customer engagement platform. Streamlines customer interactions for your business across WhatsApp, website, and email with intelligent automation.</p>
-              <a href="https://intelliconcierge.com" target="_blank" class="venture-link">Visit →</a>
-            </div>
-          </div>
-          <div class="venture-card">
-            <div class="venture-header google-blue"></div>
-            <div class="venture-content">
-              <h3>Beeva AI <span class="mvp-badge">MVP</span></h3>
-              <p class="venture-status">✓ Completed</p>
-              <p>Science-backed AI for personalized skincare. An intelligent platform that understands skin, recommends products, and helps businesses optimize their skincare offerings.</p>
-              <a href="https://beeva.ai/" target="_blank" class="venture-link">Visit →</a>
-            </div>
-          </div>
-          <div class="venture-card">
-            <div class="venture-header google-yellow"></div>
-            <div class="venture-content">
-              <h3>Pikelo App <span class="mvp-badge">MVP</span></h3>
-              <p class="venture-status">✓ Completed</p>
-              <p>Mobile app for learning English using AI and voice-only interaction. An innovative approach to language learning through natural conversation powered by artificial intelligence.</p>
-              <a href="https://pikelo.co/" target="_blank" class="venture-link">Visit →</a>
-            </div>
-          </div>
+      <div class="timeline-item">
+        <div class="timeline-dot google-green shape-4"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2022</span>
+          <p>Sonatel/Orange</p>
         </div>
       </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <h2 class="section-title">Skills & Technologies</h2>
-        <div class="skills-grid">
-          <div class="skill-item">Python (Django, Flask, FastAPI)</div>
-          <div class="skill-item">Scala & Apache Spark</div>
-          <div class="skill-item">JavaScript & D3.js</div>
-          <div class="skill-item">SQL Databases (MySQL, PostgreSQL)</div>
-          <div class="skill-item">NoSQL Databases (Neo4j, MongoDB)</div>
-          <div class="skill-item">ELK Stack (Elasticsearch, Logstash, Kibana)</div>
-          <div class="skill-item">Data Analytics & Visualization</div>
-          <div class="skill-item">Data Strategy & Architecture</div>
-          <div class="skill-item">HTML, CSS & Bootstrap</div>
-          <div class="skill-item">Agile/SCRUM Methodology</div>
-          <div class="skill-item">Public Speaking & Training</div>
+      <div class="timeline-item">
+        <div class="timeline-dot google-yellow shape-8"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2022</span>
+          <p>Super Codeurs Trainer</p>
         </div>
       </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <!-- Map Photos -->
-        <div class="map-photos">
-          <div class="map-photos-track">
-            <div class="map-photo map-photo-1">
-              <img src="img/mappings/map-kaba1.jpg" alt="Team photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-2">
-              <img src="img/mappings/map-kaba2.jpg" alt="Team photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-3">
-              <img src="img/mappings/map-kaba3.jpg" alt="Work photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-4">
-              <img src="img/mappings/map-kaba-intelliconcierge.jpg" alt="Team photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-5">
-              <img src="img/mappings/map-kaba5.jpg" alt="Professional photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-6">
-              <img src="img/mappings/kaba-headshot-frontal-view.JPG" alt="Headshot" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-7">
-              <img src="img/mappings/kaba-headshot-profile-view.JPG" alt="Profile photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-8">
-              <img src="img/mappings/map-kaba1.jpg" alt="Professional photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-9">
-              <img src="img/mappings/map-kaba2.jpg" alt="Entrepreneurship photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-10">
-              <img src="img/mappings/map-kaba3.jpg" alt="Startup photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-11">
-              <img src="img/blackshirtwithblackhat.jpg" alt="Portrait in black shirt and hat" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-12">
-              <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-13">
-              <img src="img/wellsuitedandsitting.jpeg" alt="Formal seated portrait" loading="lazy">
-            </div>
-            <!-- Duplicate photos for seamless loop -->
-            <div class="map-photo map-photo-1">
-              <img src="img/mappings/map-kaba1.jpg" alt="Team photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-2">
-              <img src="img/mappings/map-kaba2.jpg" alt="Team photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-3">
-              <img src="img/mappings/map-kaba3.jpg" alt="Work photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-4">
-              <img src="img/mappings/map-kaba-intelliconcierge.jpg" alt="Team photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-5">
-              <img src="img/mappings/map-kaba5.jpg" alt="Professional photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-6">
-              <img src="img/mappings/kaba-headshot-frontal-view.JPG" alt="Headshot" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-7">
-              <img src="img/mappings/kaba-headshot-profile-view.JPG" alt="Profile photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-8">
-              <img src="img/mappings/map-kaba1.jpg" alt="Professional photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-9">
-              <img src="img/mappings/map-kaba2.jpg" alt="Entrepreneurship photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-10">
-              <img src="img/mappings/map-kaba3.jpg" alt="Startup photo" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-11">
-              <img src="img/blackshirtwithblackhat.jpg" alt="Portrait in black shirt and hat" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-12">
-              <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
-            </div>
-            <div class="map-photo map-photo-13">
-              <img src="img/wellsuitedandsitting.jpeg" alt="Formal seated portrait" loading="lazy">
-            </div>
-          </div>
-        </div>
-        <div class="videos-container">
-          <a href="https://youtu.be/zdnTfUvvcFg?t=4249" target="_blank" class="video-link-button">
-            <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-              <path d="M10 8L16 12L10 16V8Z" fill="currentColor"/>
-            </svg>
-            <span>Watch Video on YouTube</span>
-            <p class="video-title">Cérémonie de remise des diplômes - Sonatel Academy</p>
-          </a>
-
-          <a href="https://drive.google.com/file/d/11oeeAW_4cYbAS730q7boIC8FPIdVNqEz/view" target="_blank" class="video-link-button video-button-green">
-            <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-              <path d="M10 8L16 12L10 16V8Z" fill="currentColor"/>
-            </svg>
-            <span>Watch Storytelling Video</span>
-            <p class="video-title">Amada et Nila (French)</p>
-          </a>
-        </div>
-
-        <div class="languages">
-          <h3>Languages</h3>
-          <div class="languages-list">
-            <span class="language-item">
-              <span class="language-name">Soninké</span>
-              <span class="language-level">Native</span>
-            </span>
-            <span class="language-item">
-              <span class="language-name">Wolof</span>
-              <span class="language-level">Fluent</span>
-            </span>
-            <span class="language-item">
-              <span class="language-name">French</span>
-              <span class="language-level">Fluent</span>
-            </span>
-            <span class="language-item">
-              <span class="language-name">English</span>
-              <span class="language-level">Professional</span>
-            </span>
-          </div>
-        </div>
-
-        <div class="interests">
-          <h3>Interests</h3>
-          <div class="interests-list">
-            <span class="interest-item">
-              <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Reading
-            </span>
-            <span class="interest-item">
-              <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 2C12 2 8 6 8 12C8 18 12 22 12 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12 2C12 2 16 6 16 12C16 18 12 22 12 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Basketball
-            </span>
-            <span class="interest-item">
-              <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              Kickboxing
-            </span>
-            <span class="interest-item">
-              <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 12L5 7L7 12L9 7L11 12L13 7L15 12L17 7L19 12L21 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 12V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M8 18L12 16L16 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17 3L12 2L7 3L8 7H16L17 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Travel
-            </span>
-            <span class="interest-item">
-              <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 12C20 14 19 15 18 16C17 17 16 18 16 20H8C8 18 7 17 6 16C5 15 4 14 4 12C4 9.87827 4.84285 7.84344 6.34315 6.34315C7.84344 4.84285 9.87827 4 12 4C14.1217 4 16.1566 4.84285 17.6569 6.34315C19.1571 7.84344 20 9.87827 20 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8 20H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M10 20V22H14V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 8V12L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Food
-            </span>
-            <span class="interest-item">
-              <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2L18 6L21 3L22 8L17 9L21 13L19 15L15 11L11 15L9 13L13 9L8 5L13 4L10 1L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 12L8 22M12 12L16 22M8 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Writing
-            </span>
-            <span class="interest-item">
-              <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="7" cy="17" r="3" stroke="currentColor" stroke-width="2"/>
-                <circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2"/>
-                <path d="M14 5L16 3L18 5L20 3L22 5L20 7L18 5L16 7L14 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7 14V10L10 7H14L17 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 14H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Cycling
-            </span>
-          </div>
+      <div class="timeline-item">
+        <div class="timeline-dot google-blue shape-5"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2021</span>
+          <p>PCO Partners</p>
         </div>
       </div>
-    </section>
-
-    <!-- Presentations Modal -->
-    <div class="presentations-modal" id="presentations" aria-hidden="true">
-      <div class="presentations-dialog" role="dialog" aria-modal="true" aria-labelledby="presentations-title">
-        <button class="modal-close" type="button" aria-label="Close presentations">&times;</button>
-        <div class="presentations-header">
-          <p class="modal-kicker">Presentations & Tech Notes</p>
-          <h3 id="presentations-title">Preview my decks and resources</h3>
-          <p class="modal-subtitle">Quick view and download the materials I share with teams and clients.</p>
+      <div class="timeline-item">
+        <div class="timeline-dot google-yellow shape-6"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2020</span>
+          <p>Vivializ Saurl</p>
         </div>
-        <div class="presentations-body">
-          <div class="presentations-grid">
-            <article class="presentation-card">
-              <div class="presentation-meta">
-                <span class="presentation-type">PPTX</span>
-                <span class="presentation-size">Descriptive statistics</span>
-              </div>
-              <h4 class="presentation-title">Veille Statistique Descriptive</h4>
-              <p class="presentation-desc">Slides on essential descriptive statistics techniques and how to communicate them.</p>
-              <div class="presentation-actions">
-                <a class="presentation-open" href="presentations-techs/Mahamadou%20%20KABA_%20Veille%20Statistique%20Descriptive.pptx" target="_blank" rel="noreferrer">Open</a>
-                <a class="presentation-download" href="presentations-techs/Mahamadou%20%20KABA_%20Veille%20Statistique%20Descriptive.pptx" download>Download</a>
-              </div>
-            </article>
-            <article class="presentation-card">
-              <div class="presentation-meta">
-                <span class="presentation-type">PDF</span>
-                <span class="presentation-size">Data vocabulary</span>
-              </div>
-              <h4 class="presentation-title">Le vocabulaire dans le domaine de la Data</h4>
-              <p class="presentation-desc">Reference glossary covering the core terminology used across my data projects.</p>
-              <div class="presentation-actions">
-                <a class="presentation-open" href="presentations-techs/Mahamadou%20KABA%20Le%20vocabulaire%20dans%20le%20domaine%20de%20la%20Data.pdf" target="_blank" rel="noreferrer">Open</a>
-                <a class="presentation-download" href="presentations-techs/Mahamadou%20KABA%20Le%20vocabulaire%20dans%20le%20domaine%20de%20la%20Data.pdf" download>Download</a>
-              </div>
-            </article>
-            <article class="presentation-card">
-              <div class="presentation-meta">
-                <span class="presentation-type">PPTX</span>
-                <span class="presentation-size">Web trends</span>
-              </div>
-              <h4 class="presentation-title">Veille World Wide Web (27/12/2021)</h4>
-              <p class="presentation-desc">A look at World Wide Web trends and shifts captured during late 2021.</p>
-              <div class="presentation-actions">
-                <a class="presentation-open" href="presentations-techs/Mahamadou%20KABA%20Veille%20Le%20Wold%20Wide%20Web%2027_12_2021.pptx" target="_blank" rel="noreferrer">Open</a>
-                <a class="presentation-download" href="presentations-techs/Mahamadou%20KABA%20Veille%20Le%20Wold%20Wide%20Web%2027_12_2021.pptx" download>Download</a>
-              </div>
-            </article>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot google-red shape-7"></div>
+        <div class="timeline-label">
+          <span class="timeline-year">2018</span>
+          <p>Laboratoire URANUS/UCAD</p>
         </div>
       </div>
     </div>
 
-    <!-- Photo Lightbox -->
-    <div class="photo-lightbox" aria-hidden="true">
-      <div class="photo-lightbox-backdrop"></div>
-      <div class="photo-lightbox-content" role="dialog" aria-modal="true" aria-label="Photo preview">
-        <button class="photo-lightbox-close" type="button" aria-label="Close photo preview">&times;</button>
-        <button class="photo-lightbox-nav photo-lightbox-prev" type="button" aria-label="Previous photo">&#10094;</button>
-        <img class="photo-lightbox-image" src="" alt="">
-        <button class="photo-lightbox-nav photo-lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
-        <p class="photo-lightbox-caption"></p>
+    <!-- Hero content in the middle -->
+    <div class="hero-content">
+      <div class="hero-accent"></div>
+      <h1 class="hero-title">Mahamadou Kaba</h1>
+      <p class="hero-subtitle">Data Engineer & IT Specialist</p>
+      <p class="hero-hook">Data security, APIs, and analytics for teams that move fast—without breaking compliance.</p>
+      <p class="hero-description">Securing, Building, and Analyzing Digital Assets</p>
+      <div class="hero-metrics">
+        <div class="hero-metric">
+          <span class="metric-value">8+</span>
+          <span class="metric-label">Enterprise projects</span>
+        </div>
+        <div class="hero-metric">
+          <span class="metric-value">5</span>
+          <span class="metric-label">Startups launched</span>
+        </div>
+        <div class="hero-metric">
+          <span class="metric-value">2</span>
+          <span class="metric-label">Countries served</span>
+        </div>
       </div>
+      <a href="#projects" class="cta-button">See My Work</a>
     </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-grid">
-          <div class="contact-item">
-            <h3>Email</h3>
-            <p><a href="mailto:ikeecode@gmail.com">ikeecode@gmail.com</a></p>
-            <p><a href="mailto:mahamadoukaba@esp.sn">mahamadoukaba@esp.sn</a></p>
-          </div>
-          <div class="contact-item">
-            <h3>Phone</h3>
-            <p><a href="tel:+221774130289">+221 77 413 02 89</a></p>
-            <p><a href="tel:+233533789313">+233 533 789 313</a></p>
-          </div>
-          <div class="contact-item">
-            <h3>📍 Accra 🇬🇭 </h3>
-            <p>Ambassadorial Enclave</p>
-            <p>20 Aluguntugui St</p>
-          </div>
-          <div class="contact-item">
-            <h3>📍 Dakar 🇸🇳 </h3>
-            <p>Mamelles ARTP</p>
-            <p>Yoff, Dakar</p>
-          </div>
+    <!-- Images on the right -->
+    <div class="hero-images">
+      <div class="hero-img hero-img-1">
+        <img src="img/blackshirtwithblackhat.jpg" alt="Mahamadou Kaba" loading="lazy">
+      </div>
+      <div class="hero-img hero-img-2">
+        <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
+      </div>
+      <div class="hero-img hero-img-3">
+        <img src="img/wellsuitedandsitting.jpeg" alt="Professional portrait" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services" aria-labelledby="services-title">
+    <div class="container">
+      <h2 id="services-title" class="section-title">Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon google-red"></div>
+          <h3>Security Audits</h3>
+          <p>Comprehensive security audits identifying vulnerabilities and strengthening information security policies.
+          </p>
         </div>
-        <div class="social-links">
-          <a href="https://github.com/ikeecode" target="_blank" class="social-link">GitHub</a>
-          <a href="https://www.linkedin.com/in/mahamadou-kaba-mk/" target="_blank" class="social-link">LinkedIn</a>
-          <a href="https://www.instagram.com/maha_kaba/" target="_blank" class="social-link">Instagram</a>
-          <a href="https://twitter.com/mahaKaba" target="_blank" class="social-link">X (Twitter)</a>
+        <div class="service-card">
+          <div class="service-icon google-yellow"></div>
+          <h3>API Development</h3>
+          <p>Custom API design and implementation for seamless system integration and operational efficiency.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon google-blue"></div>
+          <h3>Data Engineering</h3>
+          <p>Large-scale data collection, processing, and analytics to drive informed business decisions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon google-green"></div>
+          <h3>Risk Management</h3>
+          <p>Data risk management and GDPR compliance support for secure and regulated operations.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon google-red"></div>
+          <h3>IT Consultancy</h3>
+          <p>Strategic IT consulting for businesses and startups to optimize technology infrastructure and drive digital
+            transformation.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2025 Mahamadou Kaba. All rights reserved.</p>
-    </footer>
-  </body>
+  <!-- Projects Section -->
+  <section id="projects" class="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <h2 id="projects-title" class="section-title">Client Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header google-red"></div>
+          <div class="project-content">
+            <h3>Security Audit for Confidential Corporation</h3>
+            <p>Led a comprehensive security audit identifying critical vulnerabilities and proposing solutions to
+              enhance security posture.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header google-yellow"></div>
+          <div class="project-content">
+            <h3>API Development for Deloitte Senegal</h3>
+            <p>Designed custom APIs facilitating effective system integration, improving productivity and optimizing
+              mission processes.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header google-blue"></div>
+          <div class="project-content">
+            <h3>Data Engineering for Orange-Sonatel</h3>
+            <p>Led data engineering project collecting and transforming complex data into actionable insights with
+              significant efficiency gains.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header google-green"></div>
+          <div class="project-content">
+            <h3>GDPR Compliance for Maxool Web App</h3>
+            <p>Assisted in achieving GDPR compliance by developing privacy policies, data management processes, and
+              staff training.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entrepreneurship Section -->
+  <section id="entrepreneurship" class="entrepreneurship" aria-labelledby="entrepreneurship-title">
+    <div class="container">
+      <h2 id="entrepreneurship-title" class="section-title">Entrepreneurship</h2>
+      <p class="section-subtitle">Ventures & Startups I'm Building</p>
+      <div class="ventures-grid">
+        <div class="venture-card">
+          <div class="venture-header google-red"></div>
+          <div class="venture-content">
+            <h3>Intelli Concierge</h3>
+            <p class="venture-status">🚀 In Development</p>
+            <p>AI-powered customer engagement platform. Streamlines customer interactions for your business across
+              WhatsApp, website, and email with intelligent automation.</p>
+            <a href="https://intelliconcierge.com" target="_blank" rel="noopener noreferrer" class="venture-link">Visit
+              →</a>
+          </div>
+        </div>
+        <div class="venture-card">
+          <div class="venture-header google-blue"></div>
+          <div class="venture-content">
+            <h3>Beeva AI <span class="mvp-badge">MVP</span></h3>
+            <p class="venture-status">✓ Completed</p>
+            <p>Science-backed AI for personalized skincare. An intelligent platform that understands skin, recommends
+              products, and helps businesses optimize their skincare offerings.</p>
+            <a href="https://beeva.ai/" target="_blank" rel="noopener noreferrer" class="venture-link">Visit →</a>
+          </div>
+        </div>
+        <div class="venture-card">
+          <div class="venture-header google-yellow"></div>
+          <div class="venture-content">
+            <h3>Pikelo App <span class="mvp-badge">MVP</span></h3>
+            <p class="venture-status">✓ Completed</p>
+            <p>Mobile app for learning English using AI and voice-only interaction. An innovative approach to language
+              learning through natural conversation powered by artificial intelligence.</p>
+            <a href="https://pikelo.co/" target="_blank" rel="noopener noreferrer" class="venture-link">Visit →</a>
+          </div>
+        </div>
+        <div class="venture-card">
+          <div class="venture-header google-green"></div>
+          <div class="venture-content">
+            <h3>RestaurantsOS</h3>
+            <p class="venture-status">🚀 In Development</p>
+            <p>All-in-one management platform for caterers and food entrepreneurs in Africa. Quotes, orders, unified messaging (WhatsApp, Instagram, Email), digital menus, inventory, CRM, and team management — all in one place.</p>
+            <a href="https://restaurantsos.store" target="_blank" rel="noopener noreferrer" class="venture-link">Visit →</a>
+          </div>
+        </div>
+        <div class="venture-card">
+          <div class="venture-header google-red"></div>
+          <div class="venture-content">
+            <h3>CCBM Platform</h3>
+            <p class="venture-status">✓ Completed</p>
+            <p>Performance tracking platform for CCBM Group (Senegal). Integrates with Salesforce to synchronize tasks and monitor team performance across the organization.</p>
+            <a href="https://ccbm.website" target="_blank" rel="noopener noreferrer" class="venture-link">Visit →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <h2 id="skills-title" class="section-title">Skills & Technologies</h2>
+      <div class="skills-grid">
+        <div class="skill-item">Python (Django, Flask, FastAPI)</div>
+        <div class="skill-item">Scala & Apache Spark</div>
+        <div class="skill-item">JavaScript & D3.js</div>
+        <div class="skill-item">SQL Databases (MySQL, PostgreSQL)</div>
+        <div class="skill-item">NoSQL Databases (Neo4j, MongoDB)</div>
+        <div class="skill-item">ELK Stack (Elasticsearch, Logstash, Kibana)</div>
+        <div class="skill-item">Data Analytics & Visualization</div>
+        <div class="skill-item">Data Strategy & Architecture</div>
+        <div class="skill-item">HTML, CSS & Bootstrap</div>
+        <div class="skill-item">Agile/SCRUM Methodology</div>
+        <div class="skill-item">Public Speaking & Training</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="container">
+      <h2 id="about-title" class="section-title">About Me</h2>
+      <!-- Map Photos -->
+      <div class="map-photos">
+        <div class="map-photos-track">
+          <div class="map-photo map-photo-1">
+            <img src="img/mappings/map-kaba1.jpg" alt="Team photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-2">
+            <img src="img/mappings/map-kaba2.jpg" alt="Team photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-3">
+            <img src="img/mappings/map-kaba3.jpg" alt="Work photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-4">
+            <img src="img/mappings/map-kaba-intelliconcierge.jpg" alt="Team photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-5">
+            <img src="img/mappings/map-kaba5.jpg" alt="Professional photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-6">
+            <img src="img/mappings/kaba-headshot-frontal-view.JPG" alt="Headshot" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-7">
+            <img src="img/mappings/kaba-headshot-profile-view.JPG" alt="Profile photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-8">
+            <img src="img/mappings/map-kaba1.jpg" alt="Professional photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-9">
+            <img src="img/mappings/map-kaba2.jpg" alt="Entrepreneurship photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-10">
+            <img src="img/mappings/map-kaba3.jpg" alt="Startup photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-11">
+            <img src="img/blackshirtwithblackhat.jpg" alt="Portrait in black shirt and hat" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-12">
+            <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-13">
+            <img src="img/wellsuitedandsitting.jpeg" alt="Formal seated portrait" loading="lazy">
+          </div>
+          <!-- Duplicate photos for seamless loop -->
+          <div class="map-photo map-photo-1">
+            <img src="img/mappings/map-kaba1.jpg" alt="Team photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-2">
+            <img src="img/mappings/map-kaba2.jpg" alt="Team photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-3">
+            <img src="img/mappings/map-kaba3.jpg" alt="Work photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-4">
+            <img src="img/mappings/map-kaba-intelliconcierge.jpg" alt="Team photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-5">
+            <img src="img/mappings/map-kaba5.jpg" alt="Professional photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-6">
+            <img src="img/mappings/kaba-headshot-frontal-view.JPG" alt="Headshot" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-7">
+            <img src="img/mappings/kaba-headshot-profile-view.JPG" alt="Profile photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-8">
+            <img src="img/mappings/map-kaba1.jpg" alt="Professional photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-9">
+            <img src="img/mappings/map-kaba2.jpg" alt="Entrepreneurship photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-10">
+            <img src="img/mappings/map-kaba3.jpg" alt="Startup photo" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-11">
+            <img src="img/blackshirtwithblackhat.jpg" alt="Portrait in black shirt and hat" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-12">
+            <img src="img/nightviewsatsaly.jpeg" alt="Night view at Saly" loading="lazy">
+          </div>
+          <div class="map-photo map-photo-13">
+            <img src="img/wellsuitedandsitting.jpeg" alt="Formal seated portrait" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="videos-container">
+        <a href="https://youtu.be/zdnTfUvvcFg?t=4249" target="_blank" rel="noopener noreferrer"
+          class="video-link-button">
+          <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
+          </svg>
+          <span>Watch Video on YouTube</span>
+          <p class="video-title">Cérémonie de remise des diplômes - Sonatel Academy</p>
+        </a>
+
+        <a href="https://drive.google.com/file/d/11oeeAW_4cYbAS730q7boIC8FPIdVNqEz/view" target="_blank"
+          rel="noopener noreferrer" class="video-link-button video-button-green">
+          <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
+          </svg>
+          <span>Watch Storytelling Video</span>
+          <p class="video-title">Amada et Nila (French)</p>
+        </a>
+      </div>
+
+      <div class="languages">
+        <h3>Languages</h3>
+        <div class="languages-list">
+          <span class="language-item">
+            <span class="language-name">Soninké</span>
+            <span class="language-level">Native</span>
+          </span>
+          <span class="language-item">
+            <span class="language-name">Wolof</span>
+            <span class="language-level">Fluent</span>
+          </span>
+          <span class="language-item">
+            <span class="language-name">French</span>
+            <span class="language-level">Fluent</span>
+          </span>
+          <span class="language-item">
+            <span class="language-name">English</span>
+            <span class="language-level">Professional</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="interests">
+        <h3>Interests</h3>
+        <div class="interests-list">
+          <span class="interest-item">
+            <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2V2Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Reading
+          </span>
+          <span class="interest-item">
+            <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+              <path d="M12 2C12 2 8 6 8 12C8 18 12 22 12 22" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+              <path d="M12 2C12 2 16 6 16 12C16 18 12 22 12 22" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+              <path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Basketball
+          </span>
+          <span class="interest-item">
+            <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+            </svg>
+            Kickboxing
+          </span>
+          <span class="interest-item">
+            <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12L5 7L7 12L9 7L11 12L13 7L15 12L17 7L19 12L21 7" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 12V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M8 18L12 16L16 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M17 3L12 2L7 3L8 7H16L17 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Travel
+          </span>
+          <span class="interest-item">
+            <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 12C20 14 19 15 18 16C17 17 16 18 16 20H8C8 18 7 17 6 16C5 15 4 14 4 12C4 9.87827 4.84285 7.84344 6.34315 6.34315C7.84344 4.84285 9.87827 4 12 4C14.1217 4 16.1566 4.84285 17.6569 6.34315C19.1571 7.84344 20 9.87827 20 12Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8 20H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M10 20V22H14V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M12 8V12L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Food
+          </span>
+          <span class="interest-item">
+            <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2L18 6L21 3L22 8L17 9L21 13L19 15L15 11L11 15L9 13L13 9L8 5L13 4L10 1L14 2Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 12L8 22M12 12L16 22M8 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Writing
+          </span>
+          <span class="interest-item">
+            <svg class="interest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="7" cy="17" r="3" stroke="currentColor" stroke-width="2" />
+              <circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2" />
+              <path d="M14 5L16 3L18 5L20 3L22 5L20 7L18 5L16 7L14 5Z" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 14V10L10 7H14L17 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10 14H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Cycling
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presentations Modal -->
+  <div class="presentations-modal" id="presentations" aria-hidden="true">
+    <div class="presentations-dialog" role="dialog" aria-modal="true" aria-labelledby="presentations-title">
+      <button class="modal-close" type="button" aria-label="Close presentations">&times;</button>
+      <div class="presentations-header">
+        <p class="modal-kicker">Presentations & Tech Notes</p>
+        <h3 id="presentations-title">Preview my decks and resources</h3>
+        <p class="modal-subtitle">Quick view and download the materials I share with teams and clients.</p>
+      </div>
+      <div class="presentations-body">
+        <div class="presentations-grid">
+          <article class="presentation-card">
+            <div class="presentation-meta">
+              <span class="presentation-type">PPTX</span>
+              <span class="presentation-size">Descriptive statistics</span>
+            </div>
+            <h4 class="presentation-title">Veille Statistique Descriptive</h4>
+            <p class="presentation-desc">Slides on essential descriptive statistics techniques and how to communicate
+              them.</p>
+            <div class="presentation-actions">
+              <a class="presentation-open"
+                href="presentations-techs/Mahamadou%20%20KABA_%20Veille%20Statistique%20Descriptive.pptx"
+                target="_blank" rel="noreferrer">Open</a>
+              <a class="presentation-download"
+                href="presentations-techs/Mahamadou%20%20KABA_%20Veille%20Statistique%20Descriptive.pptx"
+                download>Download</a>
+            </div>
+          </article>
+          <article class="presentation-card">
+            <div class="presentation-meta">
+              <span class="presentation-type">PDF</span>
+              <span class="presentation-size">Data vocabulary</span>
+            </div>
+            <h4 class="presentation-title">Le vocabulaire dans le domaine de la Data</h4>
+            <p class="presentation-desc">Reference glossary covering the core terminology used across my data projects.
+            </p>
+            <div class="presentation-actions">
+              <a class="presentation-open"
+                href="presentations-techs/Mahamadou%20KABA%20Le%20vocabulaire%20dans%20le%20domaine%20de%20la%20Data.pdf"
+                target="_blank" rel="noreferrer">Open</a>
+              <a class="presentation-download"
+                href="presentations-techs/Mahamadou%20KABA%20Le%20vocabulaire%20dans%20le%20domaine%20de%20la%20Data.pdf"
+                download>Download</a>
+            </div>
+          </article>
+          <article class="presentation-card">
+            <div class="presentation-meta">
+              <span class="presentation-type">PPTX</span>
+              <span class="presentation-size">Web trends</span>
+            </div>
+            <h4 class="presentation-title">Veille World Wide Web (27/12/2021)</h4>
+            <p class="presentation-desc">A look at World Wide Web trends and shifts captured during late 2021.</p>
+            <div class="presentation-actions">
+              <a class="presentation-open"
+                href="presentations-techs/Mahamadou%20KABA%20Veille%20Le%20Wold%20Wide%20Web%2027_12_2021.pptx"
+                target="_blank" rel="noreferrer">Open</a>
+              <a class="presentation-download"
+                href="presentations-techs/Mahamadou%20KABA%20Veille%20Le%20Wold%20Wide%20Web%2027_12_2021.pptx"
+                download>Download</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Lightbox -->
+  <div class="photo-lightbox" aria-hidden="true">
+    <div class="photo-lightbox-backdrop"></div>
+    <div class="photo-lightbox-content" role="dialog" aria-modal="true" aria-label="Photo preview">
+      <button class="photo-lightbox-close" type="button" aria-label="Close photo preview">&times;</button>
+      <button class="photo-lightbox-nav photo-lightbox-prev" type="button" aria-label="Previous photo">&#10094;</button>
+      <img class="photo-lightbox-image" src="" alt="">
+      <button class="photo-lightbox-nav photo-lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
+      <p class="photo-lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title" class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3>Email</h3>
+          <p><a href="mailto:ikeecode@gmail.com">ikeecode@gmail.com</a></p>
+          <p><a href="mailto:mahamadoukaba@esp.sn">mahamadoukaba@esp.sn</a></p>
+        </div>
+        <div class="contact-item">
+          <h3>Phone</h3>
+          <p><a href="tel:+221774130289">+221 77 413 02 89</a></p>
+          <p><a href="tel:+233533789313">+233 533 789 313</a></p>
+        </div>
+        <div class="contact-item">
+          <h3>📍 Accra 🇬🇭 </h3>
+          <p>Ambassadorial Enclave</p>
+          <p>20 Aluguntugui St</p>
+        </div>
+        <div class="contact-item">
+          <h3>📍 Dakar 🇸🇳 </h3>
+          <p>Mamelles ARTP</p>
+          <p>Yoff, Dakar</p>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/ikeecode" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="Visit my GitHub profile">GitHub</a>
+        <a href="https://www.linkedin.com/in/mahamadou-kaba-mk/" target="_blank" rel="noopener noreferrer"
+          class="social-link" aria-label="Connect on LinkedIn">LinkedIn</a>
+        <a href="https://www.instagram.com/maha_kaba/" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="Follow on Instagram">Instagram</a>
+        <a href="https://twitter.com/mahaKaba" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="Follow on X (Twitter)">X (Twitter)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Mahamadou Kaba. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>
